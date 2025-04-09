@@ -1,6 +1,6 @@
 function colorirDia(){
     // Pegar valor de campo de dia
-    let days = document.getElementById('days').value;
+    let day = document.getElementById('day').value;
 
     // Pega valor do campo de cor
     let color= document.getElementById('color').value;
@@ -9,11 +9,11 @@ function colorirDia(){
     let calendar = document.getElementById('calendar');
 
     // Verificar se o campo de dia foi prenchido
-    if(!days){
+    if(!day){
         alert('Favor informar um dia');
-    } else if((days > 0) && (days < 31)){
+    } else if((day > 0) && (day < 31)){
         //Se o numero de dias está no intervalo aplicará a cor na célula do calendario
-        let td = calendar.getElementsByTagName('td');
+        let td = calendar.getElementsByTagName('td')[parseInt(day)+1];
         td.style.backgroundColor = color;
     } else {
         alert("Favor informar um dia do calendario");
